@@ -983,3 +983,17 @@ static NSString* typeToText(MTMathAtomType type) {
 }
 
 @end
+
+#pragma mark - MTStackRel
+
+@implementation MTStackRel : MTLargeOperator
+
+/// Convenience init to create the stackrel
+- (instancetype) initWithBottom:(NSString*) bottom andTop:(MTMathList*) top
+{
+    self = [super initWithValue:bottom limits:YES];
+    self.superScript = top;
+    return self;
+}
+
+@end
